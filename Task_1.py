@@ -37,4 +37,4 @@ def write_data(out_file_name, file_name):
 
 
 if __name__ == '__main__':
-    write_data("output.csv", "data.txt")
+    write_data("output.csv", "data.tdxt")
