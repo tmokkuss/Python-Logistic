@@ -11,13 +11,13 @@ def read_data(file_name):
         return content
 
 
-def get_grade_and_name(file_name):
-    content = read_data(file_name)
+def get_grade_and_name(data):
+    data = data
     name = ''
     grade = ''
     list_of_students = []
     pattern_for_get_name = r'[0-9.:]'
-    for i in content:
+    for i in data:
         name = re.sub(pattern_for_get_name, "", i).strip(" ")
         grade = i[-1]
         list_of_students.append(name + COMMA + grade + ENTER)
@@ -25,16 +25,19 @@ def get_grade_and_name(file_name):
     return list_of_students
 
 
-def alphabetical_sorting(file_name):
-    content = get_grade_and_name(file_name)
+def alphabetical_sorting(data):
+    content = data
     return sorted(content, key=lambda x: x.split(" ")[0].upper())
 
 
-def write_data(out_file_name, file_name):
-    data = alphabetical_sorting(file_name)
+def write_data(out_file_name, data):
+    data = data
     with open(out_file_name, "w") as file:
         file.writelines(data)
 
 
 if __name__ == '__main__':
-    write_data("output.csv", "1week/Task_1_folder/data.txt")
+    content = read_data("data.txt")
+    grade_and_name = get_grade_and_name(content)
+    data = alphabetical_sorting(grade_and_name)
+    write_data("output.csv", data=data)

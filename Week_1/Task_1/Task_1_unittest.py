@@ -1,14 +1,18 @@
 import unittest
 
-from Task_1 import *
+import Task_1
 
 
 class Task1Test(unittest.TestCase):
     def test_get_grade_and_name(self):
-        self.assertEqual(get_grade_and_name("1week/Task_1_folder/data.txt")[0], 'Котов Алексей,4\n')
+        expected = "Котов Алексей,4\n"
+        data = ['1. Котов Алексей: 4']
+        self.assertEqual(Task_1.get_grade_and_name(data)[0], expected)
 
     def test_alphabetical_sorting(self):
-        self.assertEqual(alphabetical_sorting("1week/Task_1_folder/data.txt")[0], f'Бакушкин Даниил,3\n')
+        expected = ["Бакушкин Даниил,3", "Белова Юлия,3"]
+        data = ["Белова Юлия,3", "Бакушкин Даниил,3"]
+        self.assertEqual(Task_1.alphabetical_sorting(data), expected)
 
 
 if __name__ == '__main__':
