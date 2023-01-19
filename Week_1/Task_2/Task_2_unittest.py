@@ -1,10 +1,14 @@
 import unittest
-from Task_2 import *
+import Task_2
 
 
 class MyTestCase(unittest.TestCase):
     def test_sort_data(self):
-        self.assertEqual(sort_data('input.txt')[0], "KP2.2-01 - Vedomost'\n")
+        expected = ["KP2.2-01.3 - Vedomost'\n", \
+                   "KP2.2-10.3 - Vedomost'\n"]
+        data = "KP2.2-10.3 - Vedomost'\n" \
+               "KP2.2-01.3 - Vedomost'\n"
+        self.assertEqual(Task_2.sort_data(data), expected)
 
 
 if __name__ == '__main__':

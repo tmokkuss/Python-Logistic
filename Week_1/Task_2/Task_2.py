@@ -1,31 +1,35 @@
 ENTER = '\n'
+PREFIX = 'KP2.2-'
+SEPARATOR = ' - '
 
 
 def read_data(file_name):
     with open(file_name) as file:
-        content = file.read().splitlines()
+        content = file.read()
         return content
 
 
-def write_data(out_file_name, file_name):
-    data = sort_data(file_name)
+def write_data(out_file_name, data):
+    data = data
     with open(out_file_name, "w") as file:
         file.writelines(data)
 
 
-def sort_data(file_name):
-    data = read_data(file_name)
-    content = []
-    for i in data:
-        row = i + ENTER
-        content.append(row)
+def sort_data(data):
+    data_for_sort = data.splitlines()
+    values_list = []
+    for file_names in data_for_sort:
+        value = file_names[file_names.index(PREFIX) + len(PREFIX):file_names.index(SEPARATOR)]
+        values_list.append(float(value))
+    values_and_rows = list(zip(values_list, data_for_sort))
+    sorted_data = []
+    for i in sorted(values_and_rows):
+        sorted_data.append(str(i[1]) + ENTER)
 
-    def function(x):  # lambda x: float(x[6:8])
-        first_value = float(x[6:8])
-        return first_value
-
-    return sorted(content, key=function)
+    return sorted_data
 
 
 if __name__ == '__main__':
-    write_data("output.txt", "input.txt")
+    content = read_data("input.txt")
+    data = sort_data(content)
+    write_data("output.txt", data)
