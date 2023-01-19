@@ -2,6 +2,7 @@ import re
 
 COMMA = ", "
 ENTER = "\n"
+TOP = 10
 
 
 def read_data(file_name):
@@ -16,43 +17,40 @@ def write_data(out_file_name, file_name):
         file.writelines(data)
 
 
-def find_count_symbols(file_name):
+def find_count_symbols(data):
     pattern = r'[A-Za-z]'
-    content = read_data(file_name)
+    content = data
     symbols = re.findall(pattern=pattern, string=content)
     visited = set()
     duplicates_set = {}
     key = [x for x in symbols if x in visited or (visited.add(x) or False)]
 
     for index, i in enumerate(key):
-        duplicates_set[key[index]] = 0
+        duplicates_set[key[index]] = 1
 
     for x in key:
         if x in duplicates_set:
             duplicates_set[x] += 1
         else:
             duplicates_set[x] = 1
-
-    return duplicates_set
-
-
-def sorted_top(file_name):
-    content_set = find_count_symbols("input.txt")
-    return sorted(content_set.items(), key=lambda x: x[-1], reverse=True)
+    return sorted(duplicates_set.items(), key=lambda x: x[-1], reverse=True)
 
 
-def add_enters(file_name):
-    content = list(sorted_top(file_name))
+def add_enters(data):
+    content = data
     row = []
     for i in content:
         for index, x in enumerate(i):
             if type(x) == int:
-                y = str(x)
-                row.append(y + ENTER)
+                number = str(x)
+                row.append(COMMA + number + ENTER)
             else:
-                row.append(x[index] + COMMA)
-    return row[:20]
+                row.append(x)
+    return row[:(TOP*5+3)]
 
 
 if __name__ == '__main__':
-    write_data("output.txt", "input.txt")
+    content = read_data("input.txt")
+    data = find_count_symbols(content)
+    data_for_write = add_enters(data)
+    write_data("output.txt", data_for_write)
