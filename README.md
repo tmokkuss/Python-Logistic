@@ -18,6 +18,8 @@
 
 ## Second week
 
+Не получилось доделать более корректно, тесты тоже не успел сделать. 
+
 [Task](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_2)
 
 ## Third week
