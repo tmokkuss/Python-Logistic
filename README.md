@@ -18,4 +18,6 @@
 
 ## Second week
 
+[Task](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_2)
+
 ## Third week
