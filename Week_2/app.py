@@ -19,6 +19,7 @@ if __name__ == '__main__':
         username = input("Введите Ваш username: ")
         user_id = get_id(username)
         created_at = get_created_time()
+        read_data("Users.txt")
         request = User(user_id=user_id, username=username, user_created_time=created_at).add_new_user
 
     elif command == "Создать новый чат" or command == "Создать новый чат ":
@@ -32,4 +33,8 @@ if __name__ == '__main__':
 
     elif command == "Получить список чатов конкретного пользователя" or command == "Получить список чатов конкретного пользователя ":
         print("<-----Получение списка чатов пользователя----->")
+        content = read_data("Chats.txt")
+        get_users_chats(content=content)
 
+    elif command == "Отправить сообщение в чат" or command == "Отправить сообщение в чат ":
+        print("<-----Отправка сообщения в чат----->")

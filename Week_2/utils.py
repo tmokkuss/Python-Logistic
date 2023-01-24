@@ -25,7 +25,13 @@ def get_name():
     return name
 
 
-def get_users_chats():
+def read_data(file_name):
+    with open(file_name, 'r') as file:
+        content = file.read()
+    return content
+
+
+def get_users_chats(content):
     user_id = input("Введите ID пользователя: ")
     users_chats = []
     d = {}
@@ -37,18 +43,19 @@ def get_users_chats():
             if user_id in i:
                 chat_id = content[0].removeprefix("'chat_id': ")
                 users_chats.append(chat_id)
-        return users_chats
+        if len(users_chats) == 0:
+            print(f"У пользователя с ID: {user_id} нет актуальных чатов")
+        else:
+            print(users_chats)
+            return users_chats
 
 
-
-def check_users_in_data(user_id):
-    with open("Users.txt", 'r') as file:
+def check_users_in_data(file_name, user_id):
+    with open(file_name, 'r') as file:
         content = file.read()
     if user_id in content:
-        print(f"Пользователь с ID: {user_id} добавлен в чат")
         return True
     else:
-        print("error: Такого ID не существует")
         return False
 
 
@@ -57,9 +64,15 @@ def how_users():
     users_count = input("Введите cколько людей Вы хотите добавить в чат: ")
     for i in range(int(users_count)):
         user_id = input("Введите ID пользователя: ")
-        check = check_users_in_data(user_id)
+        check = check_users_in_data("Users.txt", user_id)
         if check == True:
             users.append(user_id)
+            print(f"Пользователь с ID: {user_id} добавлен в чат")
         else:
+            print("Введите действительный ID")
             users_count =+ 1
     return users
+
+
+def send_message(user_id, ):
+    check = check_users_in_data("Chats.txt", user_id)

@@ -30,13 +30,22 @@ class Chat:
         return values
 
 
-class Message:
-    def __init__(self, message_id, message_chat, message_author, message_text, message_created_time):
+class Message(Chat, User):
+    def __init__(self, message_id, chat_id, message_text, message_created_time,
+                 chat_users: list, chat_created_time):
+        super().__init__(chat_id, chat_users, chat_created_time)
         self.message_id = message_id
-        self.message_chat = message_chat
-        self.message_author = message_author
+        self.message_chat = chat_id
+        self.message_author = self.user_id
         self.message_text = message_text
         self.message_created_time = message_created_time
+
+    @property
+    def new_message(self):
+        values = {"message_id": self.message_id, "chat_id": self.message_chat, "message_text": self.message_text, "message_author": self.user_id, "created_at": self.chat_created_time}
+        write_data(file_name="Chats.txt", content=values)
+        print(f'Сообщение с ID: {self.message_id} отправлено в чат с ID:{self.chat_id}')
+        return values
 
 
 if __name__ == "__main__":
@@ -49,4 +58,4 @@ if __name__ == "__main__":
     chat_name = get_name()
     chat_id = get_id(chat_name)
     request = Chat(chat_id=chat_id, chat_name=chat_name, chat_users=chat_users, chat_created_time=created_at).add_new_chat"""
-    get_users_chats()
+
