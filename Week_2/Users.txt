@@ -1,0 +1,12 @@
+{'user_id': 2030316237680, 'username': 'asdfasdf', 'created_at': datetime.datetime(2023, 1, 24, 2, 21, 45, 638156)}
+{'user_id': 2077740381040, 'username': 'username', 'created_at': datetime.datetime(2023, 1, 24, 2, 22, 10, 165367)}
+{'user_id': 2871137153968, 'username': 'asdfasdffasdf', 'created_at': '01/24/23'}
+{'user_id': 2102979081136, 'username': 'asdfasdf', 'created_at': 'Tue Jan 24 02:26:17 2023'}
+{'user_id': 2349611168688, 'username': 'asdfasdf\\', 'created_at': '022906 24012023'}
+{'user_id': 2134692050288, 'username': 'sadf', 'created_at': '02:37:04 24.01.2023'}
+{'user_id': 2135511184752, 'username': 'asdf', 'created_at': '02:38:02 24.01.2023'}
+{'user_id': 1866041655824, 'username': 'фыва', 'created_at': '02:43:25 24.01.2023'}
+{'user_id': 2869844115792, 'username': 'фыва\\', 'created_at': '02:43:50 24.01.2023'}
+{'user_id': 2771122272112, 'username': 'asdf', 'created_at': '02:47:45 24.01.2023'}
+{'user_id': 1496127233200, 'username': 'tmokkus', 'created_at': '03:11:38 24.01.2023'}
+{'user_id': 1937324563632, 'username': 'tmokkus', 'created_at': '03:21:01 24.01.2023'}
