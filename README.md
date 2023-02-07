@@ -22,4 +22,12 @@
 
 [Task](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_2)
 
-## Third week
+## Fourth week
+[Task №1](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task1)
+
+[Task №2](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task2)
+
+[Task №3](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task3)
+
+[Task №4](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task4)
+
