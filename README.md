@@ -1,7 +1,8 @@
 # Python-Logistic
 + [First week](#first-week)
 + [Second week](#second-week)
-+ [Third week](#third-week)
++ [Fourth week](#fourth-week)
+
 ## First week
 
 Исправил бизнес-логику ко всем задачам, также подправил тесты. 
@@ -23,11 +24,12 @@
 [Task](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_2)
 
 ## Fourth week
-[Task №1](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task1)
 
-[Task №2](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task2)
+[Task №1](https://github.com/tmokkuss/Python-Logistic/blob/main/Week_4/Task1.py)
 
-[Task №3](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task3)
+[Task №2](https://github.com/tmokkuss/Python-Logistic/blob/main/Week_4/Task2.py)
 
-[Task №4](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task4)
+[Task №3](https://github.com/tmokkuss/Python-Logistic/blob/main/Week_4/Task3.py)
+
+[Task №4](https://github.com/tmokkuss/Python-Logistic/tree/main/Week_4/Task4.py)
 
